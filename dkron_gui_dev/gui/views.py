@@ -21,3 +21,6 @@ def schedule(request):
     Owner_email=request.POST.get("ownem",False)
     Parent_job=request.POST.get("pj",False)
     Concur=request.POST.get("conc",False)
+
+def create(request):
+    return render(request,"create.html")
