@@ -3,10 +3,10 @@
     padding: 0;
 }
 body{
-position: relative;
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 nav {
