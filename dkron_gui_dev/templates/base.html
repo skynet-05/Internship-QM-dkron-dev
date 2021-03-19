@@ -8,7 +8,7 @@
     </head>
     <body style="background-image:url({% static 'images/2.jpg' %})">
         <nav>
-            <p> DKRON </p>
+            <p href="{% url 'index' %}"> DKRON </p>
             <ul>
                 <li> <a href="{% url 'index' %}"> HOME </a> </li>
                     <li> <a href="#"> JOBS </a>
@@ -21,6 +21,7 @@
                 <li> <a href="#">DASHBOARD </a></li>
                 <li> <a href="#">BUSY </a></li> 
             </ul>
+            <iframe src="http://free.timeanddate.com/clock/i7pq22si/n438/tlin/fn12/fs15/tt0/th1/ta1/tb4" frameborder="0" width="255" height="33"></iframe>
         </nav>
         {%block content %}
         {% endblock %}
