@@ -2,7 +2,6 @@ from django.shortcuts import render
 #from pydkron import DkronClient
 
 
-
 # Create your views here.
 
 def index(request):
@@ -10,17 +9,19 @@ def index(request):
 
 def status(request):
     return render(request,"status.html")
-
 def schedule(request):
-    Id=request.POST.get("id",False)
-    Name=request.POST.get("name",False)
-    DispName=request.POST.get("disp",False)
-    TimeZone=request.POST.get("tz",False)
-    Schedule=request.POST.get("sch",False)  
-    Owner=request.POST.get("own",False)
-    Owner_email=request.POST.get("ownem",False)
-    Parent_job=request.POST.get("pj",False)
-    Concur=request.POST.get("conc",False)
-
+    data={
+        "jname":request.POST.get("jobname", False),
+        "fname":request.POST.get("disname", False),
+        "sname":request.POST.get("schedulefor", False),
+        "rname":request.POST.get("retries", False),
+        "yname":request.POST.get("year", False),
+        "mname":request.POST.get("month", False),
+        "wname":request.POST.get("week", False),
+        "dname":request.POST.get("day", False),
+        "hname":request.POST.get("hour", False),
+        "miname":request.POST.get("minute", False),
+    }
+    return render(request,"dummy.html", data)
 def create(request):
     return render(request,"create.html")

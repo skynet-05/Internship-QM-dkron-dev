@@ -5,12 +5,13 @@ label {
     padding-right: 10px;
 }
 
-select {
-    font-size: .9rem;
-    padding: 2px 4px;
+.form_create {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 
-.form_create {
+.year{
     margin: auto;
     width: 50%;
     padding: 10px;

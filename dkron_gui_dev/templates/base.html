@@ -5,6 +5,7 @@
     <head>
         <title> QM DKRON {% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        {% block header %}{% endblock %}
     </head>
     <body style="background-image:url({% static 'images/2.jpg' %})">
         <nav>
@@ -23,9 +24,7 @@
             </ul>
             <iframe src="http://free.timeanddate.com/clock/i7pq22si/n438/tlin/fn12/fs15/tt0/th1/ta1/tb4" frameborder="0" width="255" height="33"></iframe>
         </nav>
-        {%block content %}
+        {% block content %}
         {% endblock %}
     </body>
 </html>
-
-   
