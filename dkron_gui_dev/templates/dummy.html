@@ -1,10 +1,22 @@
-{{jname}}
-{{fname}}
-{{sname}}
-{{rname}}
-{{yname}}
-{{mname}}
-{{wname}}
-{{dname}}
-{{hname}}
-{{miname}}
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    div {
+        color: white;
+    }
+</style>
+<div>
+    Job name: {{jname}} <br>
+    display name: {{fname}}<br>
+    date and time: {{sname}}<br>
+    retries: {{rname}}<br>
+    recurr<br>
+    year: {{yname}}<br>
+    month: {{mname}}<br>
+    week: {{wname}}<br>
+    day: {{dname}}<br>
+    hour: {{hname}}<br>
+    minute: {{miname}}<br>
+</div>
+
+{% endblock %}
