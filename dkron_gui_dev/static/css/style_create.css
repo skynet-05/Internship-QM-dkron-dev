@@ -5,12 +5,16 @@ label {
     padding-right: 10px;
 }
 
-.form_create {
+.form_createe {
     margin: auto;
     width: 50%;
     padding: 10px;
 }
 
-#recurrr {
+#downpp {
+    display: none;
+}
+
+#domm{
     display: none;
 }

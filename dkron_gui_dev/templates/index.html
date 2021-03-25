@@ -1,8 +1,52 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
+{% load static %}
+
 {% block title %}
-Homepage
+Admin
 {% endblock %}
 
-{% block contentt%}
-<h1>HOME</h1>
+{% block contentt %}
+<link rel="stylesheet" href="{% static 'css/style_index.css' %}">
+<script src="{% static '/js/index.js' %}"></script>
+<br><br>
+<div class=form_create>
+    <form action="schedule" name=jobcreate method="POST">
+        {% csrf_token %}
+        <label for="jobname">Job name:</label>
+        <input type="text" id="jobname" name="jobname" required><br><br>
+        <label for="disname">Display name:</label>
+        <input type="text" id="disname" name="disname" required><br><br>
+        <label for="schedulefor">Schedule for:</label>
+        <input type="datetime-local" id="schedulefor" name="schedulefor" required>
+        <label class="container">Non-recurring
+            <input type="radio" name="recur" onclick="optremove()" required>
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Recurring
+            <input type="radio" name="recur" onclick="opt()">
+            <span class="checkmark"></span>
+        </label>
+        <div id="recurrr">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" min="0" max="10"><br>
+            <label for="month">Month:</label>
+            <input type="number" id="month" name="month" min="0" max="11"><br>
+            <label for="week">Week:</label>
+            <input type="number" id="week" name="week" min="0" max="4"><br>
+            <label for="day">Day:</label>
+            <input type="number" id="day" name="day" min="0" max="30"><br>
+            <label for="hour">Hour:</label>
+            <input type="number" id="hour" name="hour" min="0" max="23"><br>
+            <label for="minute">Minute:</label>
+            <input type="number" id="minute" name="minute" min="0" max="59"><br>
+        </div>
+        <br><br>
+        <label for="retries">Retries:</label>
+        <input type="number" id="retries" name="retries" min="0" max="10" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+
 {% endblock %}
