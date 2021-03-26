@@ -1,5 +1,6 @@
 function tpo() {
     downpp.style.display = "block"
+    domm.style.display = "none"
 }
 
 function tporemove() {
