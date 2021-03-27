@@ -12,9 +12,14 @@ Create a Job
 <div class=form_createe>
     <form action="schedule" name=jobcreate method="POST">
         {% csrf_token %}
+        <label for="jobname">Job name:</label>
+        <input type="text" id="jobname" name="jobname" required><br><br>
         <label for="report">Report:</label>
+        <label class="creport">Only Once
+            <input type="radio" name="pre" onclick="tporemove()" required checked="checked">
+        </label>
         <label class="creport">By Minute
-            <input type="radio" name="pre" onclick="tporemove()" required>
+            <input type="radio" name="pre" onclick="tporemovemin()" required>
         </label>
         <label class="creport">Hourly
             <input type="radio" name="pre" onclick="tporemove()" required>
@@ -29,7 +34,7 @@ Create a Job
             <input type="radio" name="pre" onclick="tporemovemonth()" required>
         </label>
         <br><br>
-        <label for="schedulefor">Schedule for:</label>
+        <label for="schedulefor">Schedule at:</label>
         <input type="datetime-local" id="schedulefor" name="schedulefor" required>
         <div id="downpp">
             <label class="rdow">Monday
@@ -89,6 +94,9 @@ Create a Job
                 <option value="#">30</option>
                 <option value="#">31</option>
             </select>
+        </div>
+        <div id="forminn">
+            <input type="number" id="forminc" name="retries" min="0" max="59"><br><br>            
         </div>
         <br><br>
         <input type="submit" value="Submit">
