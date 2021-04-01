@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> QM DKRON {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-image:url({% static 'images/2.jpg' %})">
+    <nav>
+        <p href="{% url 'index' %}"> DKRON </p>
+        <ul>
+            <li> <a href="{% url 'index' %}"> Admin </a> </li>
+            <li> <a href="#"> End-User </a>
+                <ul>
+                    <li> <a href="#"> Add filter </a> </li>
+                    <li> <a href="{% url 'create' %}"> Create </a> </li>
+                    <li> <a href="#"> Export </a> </li>
+                </ul>
+            </li>
+        </ul>
+        <iframe src="http://free.timeanddate.com/clock/i7pq22si/n438/tlin/fn12/fs15/tt0/th1/ta1/tb4" frameborder="0"
+            width="255" height="33"></iframe>
+    </nav>
+    {% block contentt %}
+    {% endblock %}
+</body>
+
+</html>
