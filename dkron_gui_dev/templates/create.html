@@ -16,26 +16,26 @@ Create a Job
         <input type="text" id="jobname" name="jobname" required><br><br>
         <label for="report">Report:</label>
         <label class="creport">Only Once
-            <input type="radio" name="pre" onclick="tporemove()" required checked="checked">
+            <input type="radio" name="pre" onclick="tporemove()" required checked="checked" value='1'>
         </label>
         <label class="creport">By Minute
-            <input type="radio" name="pre" onclick="tporemovemin()" required>
+            <input type="radio" name="pre" onclick="tporemovemin()" required value='2'>
         </label>
         <label class="creport">Hourly
-            <input type="radio" name="pre" onclick="tporemovehour()" required>
+            <input type="radio" name="pre" onclick="tporemovehour()" required value='3'>
         </label>
         <label class="creport">Daily
-            <input type="radio" name="pre" onclick="tporemovedaily()" required>
+            <input type="radio" name="pre" onclick="tporemovedaily()" required value='4'>
         </label>
         <label class="creport">Weekly
-            <input type="radio" name="pre" onclick="tpo()" required>
+            <input type="radio" name="pre" onclick="tpo()" required value='5'>
         </label>
         <label class="creport">Monthly
-            <input type="radio" name="pre" onclick="tporemovemonth()" required>
+            <input type="radio" name="pre" onclick="tporemovemonth()" required value='6'>
         </label>
         <br><br>
         <label for="schedulefor">Schedule at:</label>
-        <input type="date" id="scheduleford" name="daTe" required>
+        <input type="date" id="scheduleford" name="Date" required>
         <div id="forhour">
             <input type="number" id="forhouri" name="hours" min="0" max="23">
         </div>
@@ -44,16 +44,16 @@ Create a Job
         </div>
         <div id="downpp">
             <select name="day_week" id="dowww" placeholder="Select a day">
-                <option value="#">Monday</option>
-                <option value="#">Tuesday</option>
-                <option value="#">Wednesday</option>
-                <option value="#">Thursday</option>
-                <option value="#">Friday</option>
-                <option value="#">Saturday</option>
-                <option value="#">Sunday</option>
+                <option value="MON">Monday</option>
+                <option value="TUE">Tuesday</option>
+                <option value="WED">Wednesday</option>
+                <option value="THU">Thursday</option>
+                <option value="FRI">Friday</option>
+                <option value="SAT">Saturday</option>
+                <option value="SUN">Sunday</option>
             </select>
         </div>
-        <input type="time" id="schedulefort" name="tiMe" required>
+        <input type="time" id="schedulefort" name="Time" required>
 
 
         <div id="forminn">
