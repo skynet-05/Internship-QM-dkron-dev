@@ -14,16 +14,15 @@ def schedule(request):
     if request.POST.get("pre",False)=='1':
         schedule="@at "+request.POST.get("Date",False)+"T"+request.POST.get("Time",False)+":00+05:30"
     elif request.POST.get("pre",False)=='2':
-        schedule="@every "+request.POST.get("mins",False)+"m"
+        schedule="0 0-59/"+request.POST.get('mins',False)+" * * * *"
     elif request.POST.get("pre",False)=='3':
-        schedule="0 "+request.POST.get("Time",False)[0:1]+" "+request.POST.get("Time",False)[3:4]+"/"+request.POST.get("hours",False)+" * * *"
+        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+"/"+request.POST.get("hours",False)+" * * *"
     elif request.POST.get("pre",False)=='4':
-        schedule="0 "+request.POST.get("Time",False)[0:1]+" "+request.POST.get("Time",False)[3:4]+"/"+"24"+" * * *"
+        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+"/"+"24"+" * * *"
     elif request.POST.get("pre",False)=='5':
-        schedule="0 "+request.POST.get("Time",False)[0:1]+" "+request.POST.get("Time",False)[3:4]+" * * "+request.POST.get("day_week",False)
+        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+" * * "+request.POST.get("day_week",False)
     elif request.POST.get("pre",False)=='6':
-        schedule="0 "+request.POST.get("Time",False)[0:1]+" "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("day_month",False)+" * *"
-    
+        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+" "+request.POST.get("day_month",False)+" * *"
     jd={
         "name":request.POST.get('jobname',False),
         "schedule":schedule,
