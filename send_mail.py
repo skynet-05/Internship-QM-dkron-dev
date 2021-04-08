@@ -4,10 +4,10 @@ print("Note: For sending email you must have less secure app access enabled in y
 print("!Still working on to make this script work with good api instead.")
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = input("Enter your address    ")  # Enter your address
-receiver_email = input("Enter receiver address  ")  # Enter receiver address
-password = input("Type your password and press enter:   ")
-message = input("Enter your message here    ")
+sender_email = "pushpa98108@gmail.com"  # Enter your address
+receiver_email = "mayank98108@gmail.com"  # Enter receiver address
+password = "!Qwertyuiop09"
+message = "testing dkron"
 
 context = ssl.create_default_context()
 with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:

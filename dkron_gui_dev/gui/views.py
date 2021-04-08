@@ -10,19 +10,19 @@ def index(request):
 def status(request):
     return render(request,"status.html")
 def schedule(request):
-    dc=DkronClient(hosts=["192.168.0.159:8080","192.168.0.152:8080",])
+    dc=DkronClient(hosts=["192.168.0.109:8080","192.168.0.110:8080",])
     if request.POST.get("pre",False)=='1':
         schedule="@at "+request.POST.get("Date",False)+"T"+request.POST.get("Time",False)+":00+05:30"
     elif request.POST.get("pre",False)=='2':
-        schedule="0 0-59/"+request.POST.get('mins',False)+" * * * *"
+        schedule="@every "+request.POST.get('mins',False)+"m"
     elif request.POST.get("pre",False)=='3':
-        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+"/"+request.POST.get("hours",False)+" * * *"
+        schedule="0 "+request.POST.get("Time",False)[3:5]+" "+request.POST.get("Time",False)[0:2]+"/"+request.POST.get("hours",False)+" * * *"
     elif request.POST.get("pre",False)=='4':
-        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+"/"+"24"+" * * *"
+        schedule="0 "+request.POST.get("Time",False)[3:5]+" "+request.POST.get("Time",False)[0:2]+" * * *"
     elif request.POST.get("pre",False)=='5':
-        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+" * * "+request.POST.get("day_week",False)
+        schedule="0 "+request.POST.get("Time",False)[3:5]+" "+request.POST.get("Time",False)[0:2]+" * * "+request.POST.get("day_week",False)
     elif request.POST.get("pre",False)=='6':
-        schedule="0 "+request.POST.get("Time",False)[3:4]+" "+request.POST.get("Time",False)[0:1]+" "+request.POST.get("day_month",False)+" * *"
+        schedule="0 "+request.POST.get("Time",False)[3:5]+" "+request.POST.get("Time",False)[0:2]+" "+request.POST.get("day_month",False)+" * *"
     jd={
         "name":request.POST.get('jobname',False),
         "schedule":schedule,
@@ -31,7 +31,7 @@ def schedule(request):
         },
         "executor":"shell",
         "executor_config":{
-            "command":"python3 sendmail.py"
+            "command":"python3 send_mail.py"
         }
     }
     job=dc.create_job(jd)

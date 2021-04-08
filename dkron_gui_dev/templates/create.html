@@ -13,29 +13,29 @@ Create a Job
     <form action="schedule" name=jobcreate method="POST">
         {% csrf_token %}
         <label for="jobname">Job name:</label>
-        <input type="text" id="jobname" name="jobname" required><br><br>
+        <input type="text" id="jobname" name="jobname" ><br><br>
         <label for="report">Report:</label>
         <label class="creport">Only Once
-            <input type="radio" name="pre" onclick="tporemove()" required checked="checked" value='1'>
+            <input type="radio" name="pre" onclick="tporemove()"  value='1'>
         </label>
         <label class="creport">By Minute
-            <input type="radio" name="pre" onclick="tporemovemin()" required value='2'>
+            <input type="radio" name="pre" onclick="tporemovemin()"  value='2'>
         </label>
         <label class="creport">Hourly
-            <input type="radio" name="pre" onclick="tporemovehour()" required value='3'>
+            <input type="radio" name="pre" onclick="tporemovehour()"  value='3'>
         </label>
         <label class="creport">Daily
-            <input type="radio" name="pre" onclick="tporemovedaily()" required value='4'>
+            <input type="radio" name="pre" onclick="tporemovedaily()"  value='4'>
         </label>
         <label class="creport">Weekly
-            <input type="radio" name="pre" onclick="tpo()" required value='5'>
+            <input type="radio" name="pre" onclick="tpo()"  value='5'>
         </label>
         <label class="creport">Monthly
-            <input type="radio" name="pre" onclick="tporemovemonth()" required value='6'>
+            <input type="radio" name="pre" onclick="tporemovemonth()"  value='6'>
         </label>
         <br><br>
         <label for="schedulefor">Schedule at:</label>
-        <input type="date" id="scheduleford" name="Date" required>
+        <input type="date" id="scheduleford" name="Date" >
         <div id="forhour">
             <input type="number" id="forhouri" name="hours" min="0" max="23">
         </div>
@@ -53,7 +53,7 @@ Create a Job
                 <option value="SUN">Sunday</option>
             </select>
         </div>
-        <input type="time" id="schedulefort" name="Time" required>
+        <input type="time" id="schedulefort" name="Time" >
 
 
         <div id="forminn">
