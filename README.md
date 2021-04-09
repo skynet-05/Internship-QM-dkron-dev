@@ -29,3 +29,8 @@ Its is always recommended to install the latest software, it can be found in thi
 2. Setting up other nodes: In order to start the cluster only one node should have bootstraping capability. Therefore in the other nodes we have to comment the `bootstrap-expect` parameter in the configuration file `dkron.yml` found at `/etc/dkron/`. (Note this file can only be edited in SuperUser mode).
 3. Starting bootstrap node: Run the following command in the node having bootstraping capability: `dkron agent --server --bootstrap-expect=1 --node-name=<A NAME OF YOUR CHOICE>` (Note: node name is optional, it is used to differentiate between 2 or more systems having the same hostname).
 4. Starting other nodes in the cluster: Run the following command: `dkron agent --join <BOOTSTRAP NODE IP ADDRESS> --node-name=<A NAME OF YOUR CHOICE>` (Note: node name is optional, it is used to differentiate between 2 or more systems having the same hostname).
+
+
+# Issues:
+
+If any Issues, Create a new issue here -> https://github.com/skynet-05/Internship-QM-dkron-dev/issues
