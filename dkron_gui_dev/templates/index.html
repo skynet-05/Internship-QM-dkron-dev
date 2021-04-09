@@ -2,101 +2,64 @@
 {% load static %}
 
 {% block title %}
-Admin
+Create a Job
 {% endblock %}
 
 {% block contentt %}
-<link rel="stylesheet" href="{% static 'css/style_index.css' %}">
-<script src="{% static '/js/index.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/style_create.css' %}">
+<script src="{% static '/js/create.js' %}"></script>
 <br><br>
-<div class=form_create>
+<div class=form_createe>
     <form action="schedule" name=jobcreate method="POST">
         {% csrf_token %}
         <label for="jobname">Job name:</label>
-        <input type="text" id="jobname" name="jobname" required><br><br>
-        <label for="disname">Display name:</label>
-        <input type="text" id="disname" name="disname" required><br><br>
+        <input type="text" id="jobname" name="jobname" ><br><br>
         <label for="report">Report:</label>
+        <label class="creport">Only Once
+            <input type="radio" name="pre" onclick="tporemove()"  value='1'>
+        </label>
         <label class="creport">By Minute
-            <input type="radio" name="pre" onclick="tporemove()" required>
+            <input type="radio" name="pre" onclick="tporemovemin()"  value='2'>
         </label>
         <label class="creport">Hourly
-            <input type="radio" name="pre" onclick="tporemove()" required>
+            <input type="radio" name="pre" onclick="tporemovehour()"  value='3'>
         </label>
         <label class="creport">Daily
-            <input type="radio" name="pre" onclick="tporemove()" required>
+            <input type="radio" name="pre" onclick="tporemovedaily()"  value='4'>
         </label>
         <label class="creport">Weekly
-            <input type="radio" name="pre" onclick="tpo()" required>
+            <input type="radio" name="pre" onclick="tpo()"  value='5'>
         </label>
         <label class="creport">Monthly
-            <input type="radio" name="pre" onclick="tporemovemonth()" required>
+            <input type="radio" name="pre" onclick="tporemovemonth()"  value='6'>
         </label>
         <br><br>
-        <label for="schedulefor">Schedule for:</label>
-        <input type="datetime-local" id="schedulefor" name="schedulefor" required>
-        <div id="downpp">
-            <label class="rdow">Monday
-                <input type="radio" name="rrdow">
-            </label>
-            <label class="rdow">Tuesday
-                <input type="radio" name="rrdow">
-            </label>
-            <label class="rdow">Wednesday
-                <input type="radio" name="rrdow">
-            </label>
-            <label class="rdow">Thursday
-                <input type="radio" name="rrdow">
-            </label>
-            <label class="rdow">Friday
-                <input type="radio" name="rrdow">
-            </label>
-            <label class="rdow">Saturday
-                <input type="radio" name="rrdow">
-            </label>
-            <label class="rdow">Sunday
-                <input type="radio" name="rrdow">
-            </label>
+        <label for="schedulefor">Schedule at:</label>
+        <input type="date" id="scheduleford" name="Date" >
+        <div id="forhour">
+            <input type="number" id="forhouri" name="hours" min="0" max="23">
         </div>
         <div id="domm">
-            <label class="domdd">Pick a date in the month</label>
-            <select name="day_month" id="dommm">
-                <option value="#">1</option>
-                <option value="#">2</option>
-                <option value="#">3</option>
-                <option value="#">4</option>
-                <option value="#">5</option>
-                <option value="#">6</option>
-                <option value="#">7</option>
-                <option value="#">8</option>
-                <option value="#">9</option>
-                <option value="#">10</option>
-                <option value="#">11</option>
-                <option value="#">12</option>
-                <option value="#">13</option>
-                <option value="#">14</option>
-                <option value="#">15</option>
-                <option value="#">16</option>
-                <option value="#">17</option>
-                <option value="#">18</option>
-                <option value="#">19</option>
-                <option value="#">20</option>
-                <option value="#">21</option>
-                <option value="#">22</option>
-                <option value="#">23</option>
-                <option value="#">24</option>
-                <option value="#">25</option>
-                <option value="#">26</option>
-                <option value="#">27</option>
-                <option value="#">28</option>
-                <option value="#">29</option>
-                <option value="#">30</option>
-                <option value="#">31</option>
+            <input type="number" id="dommm" name="day_month" min="0" max="31">
+        </div>
+        <div id="downpp">
+            <select name="day_week" id="dowww" placeholder="Select a day">
+                <option value="MON">Monday</option>
+                <option value="TUE">Tuesday</option>
+                <option value="WED">Wednesday</option>
+                <option value="THU">Thursday</option>
+                <option value="FRI">Friday</option>
+                <option value="SAT">Saturday</option>
+                <option value="SUN">Sunday</option>
             </select>
         </div>
+        <input type="time" id="schedulefort" name="Time" >
+
+
+        <div id="forminn">
+            <input type="number" id="forminc" name="mins" min="0" max="59">
+        </div>
         <br><br>
-        <label for="retries">Retries:</label>
-        <input type="number" id="retries" name="retries" min="0" max="10" required><br><br>
         <input type="submit" value="Submit">
     </form>
 </div>
