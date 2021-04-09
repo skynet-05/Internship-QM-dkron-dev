@@ -33,4 +33,4 @@ Its is always recommended to install the latest software, it can be found in thi
 
 # Issues:
 
-If any Issues, Create a new issue here -> https://github.com/skynet-05/Internship-QM-dkron-dev/issues
+If any Issues, it can be addressed here -> https://github.com/skynet-05/Internship-QM-dkron-dev/issues
