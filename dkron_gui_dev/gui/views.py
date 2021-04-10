@@ -9,6 +9,7 @@ def index(request):
 
 def status(request):
     return render(request,"status.html")
+
 def schedule(request):
     dc=DkronClient(hosts=["192.168.0.109:8080","192.168.0.110:8080",])
     if request.POST.get("pre",False)=='1':
@@ -37,5 +38,6 @@ def schedule(request):
     job=dc.create_job(jd)
     job.save()
     return render(request,"dummy.html", jd)
+
 def create(request):
     return render(request,"create.html")
