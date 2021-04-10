@@ -31,7 +31,7 @@ def schedule(request):
         },
         "executor":"shell",
         "executor_config":{
-            "command":"python3 send_mail.py"
+            "command":request.POST.get('process',False)
         }
     }
     job=dc.create_job(jd)
