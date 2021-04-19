@@ -34,15 +34,16 @@ Create a Job
             <input type="radio" name="pre" onclick="tporemovemonth()"  value='6'>
         </label>
         <br><br>
-        <label for="schedulefor">Schedule at:</label>
+        <label for="schedulefor">Schedule at</label>
         <input type="date" id="scheduleford" name="Date" >
         <div id="forhour">
+            <label>every </label>
             <input type="number" id="forhouri" name="hours" min="0" max="23">
+            <label> hours from </label>
         </div>
-        <div id="domm">
-            <input type="number" id="dommm" name="day_month" min="0" max="31">
-        </div>
+        <input type="time" id="schedulefort" name="Time" >
         <div id="downpp">
+            <label>every </label>
             <select name="day_week" id="dowww" placeholder="Select a day">
                 <option value="MON">Monday</option>
                 <option value="TUE">Tuesday</option>
@@ -53,13 +54,20 @@ Create a Job
                 <option value="SUN">Sunday</option>
             </select>
         </div>
-        <input type="time" id="schedulefort" name="Time" >
-
+        <div id="domm">            
+            <label>every </label>
+            <input type="number" id="dommm" name="day_month" min="0" max="31">
+            <label>of the month </label>
+        </div>
 
         <div id="forminn">
+            <label>every </label>
             <input type="number" id="forminc" name="mins" min="0" max="59">
         </div>
-        <br><br>
+	
+	<br><br>
+	 <label for="process">Command:</label>
+        <input type="text" id="jobname" name="process" ><br><br>
         <input type="submit" value="Submit">
     </form>
 </div>
