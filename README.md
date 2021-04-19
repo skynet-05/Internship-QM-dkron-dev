@@ -1,4 +1,4 @@
-# Internship-QM-dkron-dev
+# dkron-development
 
 # Installion of Django framework:
 
